@@ -37,6 +37,13 @@ public class BandTest {
     assertTrue(Band.all().get(0).equals(myBand));
   }
 
+  @Test
+  public void save_assignsIdToObject_int() {
+    Band myBand = new Band("BandName");
+    myBand.save();
+    Band savedBand = Band.all().get(0);
+    assertEquals(myBand.getId(), savedBand.getId());
+  }
 
 
 
