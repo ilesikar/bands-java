@@ -61,4 +61,13 @@ public class BandTest {
     assertEquals("Band2", Band.find(myBand.getId()).getName());
   }
 
+  @Test
+    public void delete_deletesBand_true() {
+      Band myBand = new Band("Band1");
+      myBand.save();
+      int myBandId = myBand.getId();
+      myBand.delete();
+      assertEquals(null, Band.find(myBandId));
+    }
+
 }
