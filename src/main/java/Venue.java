@@ -24,4 +24,16 @@ public class Venue {
     }
   }
 
+  @Override
+  public boolean equals(Object otherVenue) {
+    if (!(otherVenue instanceof Venue)) {
+      return false;
+    } else {
+      Venue newVenue = (Venue) otherVenue;
+      return this.getName().equals(newVenue.getName()) &&
+             this.getId() == newVenue.getId();
+    }
+  }
+
+
 }

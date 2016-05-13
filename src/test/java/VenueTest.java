@@ -25,6 +25,11 @@ public class VenueTest {
     assertEquals(0, Venue.all().size());
   }
 
-
+  @Test
+  public void equals_returnsTrueIfNamesAretheSame_true() {
+    Venue firstVenue = new Venue("Venue1");
+    Venue secondVenue = new Venue("Venue1");
+    assertTrue(firstVenue.equals(secondVenue));
+  }
 
 }
