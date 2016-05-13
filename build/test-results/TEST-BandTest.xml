@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="BandTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2016-05-13T18:53:32" hostname="epicodus-41.local" time="0.132">
+<testsuite name="BandTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2016-05-13T18:56:26" hostname="epicodus-41.local" time="0.135">
   <properties/>
-  <testcase name="all_emptyAtFirst_0" classname="BandTest" time="0.12"/>
-  <testcase name="getName_bandInstantiatesWithName_String" classname="BandTest" time="0.005"/>
-  <testcase name="Band_instantiatesCorrectly_true" classname="BandTest" time="0.006"/>
+  <testcase name="all_emptyAtFirst_0" classname="BandTest" time="0.118"/>
+  <testcase name="getName_bandInstantiatesWithName_String" classname="BandTest" time="0.006"/>
+  <testcase name="equals_returnsTrueIfNamesAretheSame_true" classname="BandTest" time="0.005"/>
+  <testcase name="Band_instantiatesCorrectly_true" classname="BandTest" time="0.005"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
