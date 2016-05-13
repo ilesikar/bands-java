@@ -93,5 +93,15 @@ public class BandTest {
     assertEquals(1, savedVenues.size());
   }
 
+  @Test
+  public void delete_deletesAllBandsAndVanuesAssociations() {
+    Venue myVenue = new Venue("Venue1");
+    myVenue.save();
+    Band myBand = new Band("Band1");
+    myBand.save();
+    myBand.addVenue(myVenue);
+    myBand.delete();
+    assertEquals(0, myVenue.getBands().size());
+  }
 
 }
