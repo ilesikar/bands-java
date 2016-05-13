@@ -39,6 +39,13 @@ public class VenueTest {
     assertTrue(Venue.all().get(0).equals(myVenue));
   }
 
+  @Test
+  public void save_assignsIdToObject_int() {
+    Venue myVenue = new Venue("Venue1");
+    myVenue.save();
+    Venue savedVenue = Venue.all().get(0);
+    assertEquals(myVenue.getId(), savedVenue.getId());
+  }
 
 
 }
