@@ -38,7 +38,14 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("Band1");
   }
 
-
+  @Test
+  public void bandShowPageDisplaysDescription() {
+    Band testBand = new Band("Band1");
+    testBand.save();
+    String url = String.format("http://localhost:4567/bands/%d", testBand.getId());
+    goTo(url);
+    assertThat(pageSource()).contains("Band1");
+  }
 
 
 }
