@@ -17,12 +17,6 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    get("/venue-form", (request, response) -> {
-      HashMap<String, Object> model = new HashMap<String, Object>();
-      model.put("template", "templates/venue-form.vtl");
-      return new ModelAndView(model, layout);
-    }, new VelocityTemplateEngine());
-
     get("/band-form", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       model.put("template", "templates/band-form.vtl");
@@ -31,16 +25,27 @@ public class App {
 
     post("/band-form", (request, response) -> {
       String name = request.queryParams("name");
-      Band newBand = new Band(name);
-      newBand.save();
+      if (!name.equals("") && !name.equals(" ")) {
+        Band newBand = new Band(name);
+        newBand.save();
+      }
       response.redirect("/");
       return null;
     });
 
+    get("/venue-form", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/venue-form.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
     post("/venue-form", (request, response) -> {
       String name = request.queryParams("name");
-      Venue newVenue = new Venue(name);
-      newVenue.save();
+      if (!name.equals("") && !name.equals(" ")) {
+        Venue newVenue = new Venue(name);
+        newVenue.save();
+      }
+
       response.redirect("/");
       return null;
     });
@@ -59,7 +64,10 @@ public class App {
       int venueId = Integer.parseInt(request.queryParams("venue_id"));
       Venue venue = Venue.find(venueId);
       Band band = Band.find(bandId);
-      band.addVenue(venue);
+      //Stops from adding multiples of same venue :)
+      if (!band.getVenues().contains(venue)) {
+        band.addVenue(venue);
+      }
       response.redirect("/bands/" + bandId);
       return null;
     });
@@ -85,7 +93,7 @@ public class App {
       int bandId = Integer.parseInt(request.params("id"));
       Band band = Band.find(bandId);
       band.delete();
-      response.redirect("/bands");
+      response.redirect("/");
       return null;
     });
   }
