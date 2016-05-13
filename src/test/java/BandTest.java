@@ -46,12 +46,19 @@ public class BandTest {
   }
 
   @Test
-    public void find_findsBandInDatabase_true() {
-      Band myBand = new Band("BandName");
-      myBand.save();
-      Band savedBand = Band.find(myBand.getId());
-      assertTrue(myBand.equals(savedBand));
-    }
+  public void find_findsBandInDatabase_true() {
+    Band myBand = new Band("BandName");
+    myBand.save();
+    Band savedBand = Band.find(myBand.getId());
+    assertTrue(myBand.equals(savedBand));
+  }
 
+  @Test
+  public void update_updatesBandName_true() {
+    Band myBand = new Band("Band1");
+    myBand.save();
+    myBand.update("Band2");
+    assertEquals("Band2", Band.find(myBand.getId()).getName());
+  }
 
 }

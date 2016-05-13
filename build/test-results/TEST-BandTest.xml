@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="BandTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2016-05-13T19:00:56" hostname="epicodus-41.local" time="0.194">
+<testsuite name="BandTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2016-05-13T19:02:58" hostname="epicodus-41.local" time="0.214">
   <properties/>
-  <testcase name="save_savesObjectIntoDatabase_true" classname="BandTest" time="0.13"/>
-  <testcase name="all_emptyAtFirst_0" classname="BandTest" time="0.01"/>
+  <testcase name="save_savesObjectIntoDatabase_true" classname="BandTest" time="0.129"/>
+  <testcase name="all_emptyAtFirst_0" classname="BandTest" time="0.011"/>
   <testcase name="getName_bandInstantiatesWithName_String" classname="BandTest" time="0.006"/>
-  <testcase name="find_findsBandInDatabase_true" classname="BandTest" time="0.019"/>
-  <testcase name="save_assignsIdToObject_int" classname="BandTest" time="0.016"/>
-  <testcase name="equals_returnsTrueIfNamesAretheSame_true" classname="BandTest" time="0.006"/>
-  <testcase name="Band_instantiatesCorrectly_true" classname="BandTest" time="0.006"/>
+  <testcase name="find_findsBandInDatabase_true" classname="BandTest" time="0.016"/>
+  <testcase name="save_assignsIdToObject_int" classname="BandTest" time="0.017"/>
+  <testcase name="equals_returnsTrueIfNamesAretheSame_true" classname="BandTest" time="0.005"/>
+  <testcase name="update_updatesBandName_true" classname="BandTest" time="0.022"/>
+  <testcase name="Band_instantiatesCorrectly_true" classname="BandTest" time="0.005"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
