@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.ArrayList;
 import org.sql2o.*;
 
 public class Band {
@@ -71,6 +72,36 @@ public class Band {
     con.createQuery(sql)
       .addParameter("id", this.id)
       .executeUpdate();
+    }
+  }
+
+  public void addVenue(Venue venue) {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "INSERT INTO bands_venues (venue_id, band_id) VALUES (:venue_id, :band_id)";
+      con.createQuery(sql)
+        .addParameter("venue_id", venue.getId())
+        .addParameter("band_id", this.getId())
+        .executeUpdate();
+    }
+  }
+
+  public List<Venue> getVenues() {
+    try(Connection con = DB.sql2o.open()){
+      String joinQuery = "SELECT venue_id FROM bands_venues WHERE band_id = :band_id";
+      List<Integer> venueIds = con.createQuery(joinQuery)
+        .addParameter("band_id", this.getId())
+        .executeAndFetch(Integer.class);
+
+      List<Venue> venues = new ArrayList<Venue>();
+
+      for (Integer venueId : venueIds) {
+        String bandQuery = "SELECT * FROM venues WHERE id = :venueId";
+        Venue venue = con.createQuery(bandQuery)
+          .addParameter("venueId", venueId)
+          .executeAndFetchFirst(Venue.class);
+        venues.add(venue);
+      }
+      return venues;
     }
   }
 

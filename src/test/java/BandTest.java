@@ -1,5 +1,6 @@
 import org.sql2o.*;
 import org.junit.*;
+import java.util.List;
 import static org.junit.Assert.*;
 
 public class BandTest {
@@ -62,12 +63,35 @@ public class BandTest {
   }
 
   @Test
-    public void delete_deletesBand_true() {
-      Band myBand = new Band("Band1");
-      myBand.save();
-      int myBandId = myBand.getId();
-      myBand.delete();
-      assertEquals(null, Band.find(myBandId));
-    }
+  public void delete_deletesBand_true() {
+    Band myBand = new Band("Band1");
+    myBand.save();
+    int myBandId = myBand.getId();
+    myBand.delete();
+    assertEquals(null, Band.find(myBandId));
+  }
+
+  @Test
+  public void addVenue_addsVenueToBand() {
+    Venue myVenue = new Venue("Venue1");
+    myVenue.save();
+    Band myBand = new Band("Band1");
+    myBand.save();
+    myBand.addVenue(myVenue);
+    Venue savedVenue = myBand.getVenues().get(0);
+    assertTrue(myVenue.equals(savedVenue));
+  }
+  //
+  // @Test
+  // public void getVenues_returnsAllVenues_List() {
+  //   Venue myVenue = new Venue("Venue1");
+  //   myVenue.save();
+  //   Band myBand = new Band("Band1");
+  //   myBand.save();
+  //   myBand.addVenue(myVenue);
+  //   List savedVenues = myBand.getVenues();
+  //   assertEquals(1, savedVenues.size());
+  }
+
 
 }
