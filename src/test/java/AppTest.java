@@ -39,7 +39,7 @@ public class AppTest extends FluentTest {
   }
 
   @Test
-  public void bandShowPageDisplaysDescription() {
+  public void bandShowPageDisplaysName() {
     Band testBand = new Band("Band1");
     testBand.save();
     String url = String.format("http://localhost:4567/bands/%d", testBand.getId());
@@ -61,4 +61,16 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("Venue1");
   }
 
+  @Test
+  public void bandNameIsUpdated() {
+    Band testBand = new Band("Band1");
+    testBand.save();
+    String url = String.format("http://localhost:4567/bands/%d", testBand.getId());
+    goTo(url);
+    click("a", withText("Edit this band"));
+    fill("#name").with("Band2");
+    submit(".btn");
+    goTo(url);
+    assertThat(pageSource()).contains("Band2");
+  }
 }
