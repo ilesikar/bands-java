@@ -5,7 +5,8 @@ public class ServerRule extends ExternalResource {
 
   protected void before() {
     String[] args = {};
-    App.main(args); // for other apps, replace App with main class
+    App.main(args); //Change App to w/e main class is
+  }
 
   protected void after() {
     Spark.stop();
