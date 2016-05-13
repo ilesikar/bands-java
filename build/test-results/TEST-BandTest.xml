@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="BandTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2016-05-13T19:51:42" hostname="epicodus-41.local" time="0.327">
+<testsuite name="BandTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2016-05-13T19:54:25" hostname="epicodus-41.local" time="0.357">
   <properties/>
-  <testcase name="save_savesObjectIntoDatabase_true" classname="BandTest" time="0.133"/>
+  <testcase name="save_savesObjectIntoDatabase_true" classname="BandTest" time="0.15"/>
   <testcase name="all_emptyAtFirst_0" classname="BandTest" time="0.012"/>
-  <testcase name="getName_bandInstantiatesWithName_String" classname="BandTest" time="0.008"/>
+  <testcase name="getName_bandInstantiatesWithName_String" classname="BandTest" time="0.006"/>
   <testcase name="find_findsBandInDatabase_true" classname="BandTest" time="0.02"/>
   <testcase name="save_assignsIdToObject_int" classname="BandTest" time="0.017"/>
-  <testcase name="equals_returnsTrueIfNamesAretheSame_true" classname="BandTest" time="0.006"/>
-  <testcase name="addVenue_addsVenueToBand" classname="BandTest" time="0.029"/>
-  <testcase name="delete_deletesBand_true" classname="BandTest" time="0.02"/>
-  <testcase name="update_updatesBandName_true" classname="BandTest" time="0.02"/>
+  <testcase name="equals_returnsTrueIfNamesAretheSame_true" classname="BandTest" time="0.008"/>
+  <testcase name="addVenue_addsVenueToBand" classname="BandTest" time="0.031"/>
+  <testcase name="delete_deletesBand_true" classname="BandTest" time="0.019"/>
+  <testcase name="update_updatesBandName_true" classname="BandTest" time="0.029"/>
   <testcase name="Band_instantiatesCorrectly_true" classname="BandTest" time="0.006"/>
   <testcase name="delete_deletesAllBandsAndVanuesAssociations" classname="BandTest" time="0.03"/>
   <testcase name="getVenues_returnsAllVenues_List" classname="BandTest" time="0.025"/>

@@ -63,7 +63,7 @@ public class Venue {
           .addParameter("id", this.getId())
           .executeUpdate();
 
-      String joinDeleteQuery = "DELETE FROM venues_tasks WHERE venue_id = :venueId";
+      String joinDeleteQuery = "DELETE FROM bands_venues WHERE venue_id = :venueId";
         con.createQuery(joinDeleteQuery)
           .addParameter("venueId", this.getId())
           .executeUpdate();
