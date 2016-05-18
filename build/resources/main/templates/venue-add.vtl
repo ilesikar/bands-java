@@ -1,0 +1,12 @@
+<h1>Add a client for $venue.getName()</h1>
+
+<form action="/venues/:id" method="post">
+  <input id="venueId" name="venueId" type="hidden" value="$venue.getId()">
+
+  <div class="form-group">
+    <label for="name">Venue:</label>
+    <input id="name" name="name" type="text">
+  </div>
+
+  <button type="submit" class="btn btn-success">Add Venue</button>
+</form>
