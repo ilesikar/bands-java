@@ -17,13 +17,13 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    get("/band-form", (request, response) -> {
+    get("/bands/new", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
-      model.put("template", "templates/band-form.vtl");
+      model.put("template", "templates/band-add.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    post("/band-form", (request, response) -> {
+    post("/bands/new", (request, response) -> {
       String name = request.queryParams("name");
       if (!name.equals("") && !name.equals(" ")) {
         Band newBand = new Band(name);
@@ -33,13 +33,13 @@ public class App {
       return null;
     });
 
-    get("/venue-form", (request, response) -> {
+    get("/venues/new", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
-      model.put("template", "templates/venue-form.vtl");
+      model.put("template", "templates/venue-add.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    post("/venue-form", (request, response) -> {
+    post("/venues/new", (request, response) -> {
       String name = request.queryParams("name");
       if (!name.equals("") && !name.equals(" ")) {
         Venue newVenue = new Venue(name);
