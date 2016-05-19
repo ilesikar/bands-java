@@ -31,9 +31,9 @@ CREATE TABLE venues (id serial PRIMARY KEY, name varchar);
 CREATE TABLE bands_venues (id serial PRIMARY KEY, band_id int, venue_id int);
 CREATE DATABASE band_tracker_test WITH TEMPLATE band_tracker;
 ```
-4. In Git Bash, navigate to hair-salon
+4. In Git Bash, navigate to bands-java
 5. Type "gradle run"
-6. Go to localhost:4567 in your web browser
+6. Go to [localhost:4567](http://localhost:4567/) in your web browser
 
 Contact me if you have any issues.
 
