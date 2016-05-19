@@ -57,7 +57,7 @@ public class AppTest extends FluentTest {
     click("a", withText("Band1"));
     assertThat(pageSource()).contains("Venue1");
   }
-  
+
   @Test
   public void venueIsAddedToBand() {
     Venue testVenue = new Venue("Venue1");
@@ -68,7 +68,18 @@ public class AppTest extends FluentTest {
     goTo(url);
     fillSelect("#venue_id").withText("Venue1");
     submit(".btn");
+    assertThat(pageSource()).contains("<li>");
     assertThat(pageSource()).contains("Venue1");
+  }
+
+  @Test
+  public void bandUpdatePageLoads() {
+    Band testBand = new Band("Band1");
+    testBand.save();
+    String url = String.format("http://localhost:4567/bands/%d", testBand.getId());
+    goTo(url);
+    click("a", withText("Edit this band"));
+    assertThat(pageSource()).contains("Update Band1");
   }
 
   @Test
@@ -94,5 +105,6 @@ public class AppTest extends FluentTest {
     goTo(url);
     assertThat(pageSource()).contains("$band.getName()");
   }
+
 
 }

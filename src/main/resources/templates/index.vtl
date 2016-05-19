@@ -1,8 +1,9 @@
 <h1>Bands-Java</h1>
 
-<p>Welcome to your hair salon, view and add bands and clients!</p>
+<p>List of all bands:</p>
 #foreach($band in $bands)
   <a href="/bands/$band.getId()">$band.getName()</a><br>
 #end
+<br>
 <a href="/bands/new">Add A Band</a><br>
 <a href="/venues/new">Add A Venue</a>

@@ -1,7 +1,7 @@
 <h1>$band.getName()'s Venues:</h1>
 
 <ul>
-  #foreach($venue in $venues)
+  #foreach($venue in $band.getVenues())
    <li>$venue.getName()</li>
   #end
 </ul>
@@ -14,7 +14,7 @@
       <option value="$venue.getId()"> $venue.getName() </option>
     #end
   </select>
-  <button type="submit" class="btn btn-info">Add venue to this band</button>
+  <button type="submit" class="btn btn-info">Add venue</button>
 </form>
 
 <a href="/venues/new">Add a new venue</a><br>
