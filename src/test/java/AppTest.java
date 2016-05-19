@@ -106,5 +106,13 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("$band.getName()");
   }
 
+  @Test
+  public void venuesAreDisplayed() {
+    Venue testVenue = new Venue("Venue1");
+    testVenue.save();
+    goTo("http://localhost:4567/");
+    assertThat(pageSource()).contains("Venue1");
+  }
+
 
 }
