@@ -1,11 +1,15 @@
-      <h1>$band.getName()'s Venues:</h1>
+<h1>$band.getName()'s Venues:</h1>
 
-      <ul>
-        #foreach($venue in $venues)
-         <li>$venue.getName()</li>
-        #end
-      </ul>
+<ul>
+  #foreach($venue in $venues)
+   <li>$venue.getName()</li>
+  #end
+</ul>
 
-      <a href="/stylists/$stylist.getId()/venues/new">Add a new venue</a>
-      <a href="/bands/$band.getId()/edit">Edit this band</a>
-      <a href="/">All bands</a>
+<a href="/stylists/$stylist.getId()/venues/new">Add a new venue</a>
+<a href="/bands/$band.getId()/edit">Edit this band</a>
+<a href="/">All bands</a>
+
+<form action='/bands/$band.getId()/delete' method='post'>
+  <button type="submit" class="btn-danger" id="delete">Delete</button>
+</form>
