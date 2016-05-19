@@ -17,9 +17,9 @@
   <button type="submit" class="btn btn-info">Add venue to this band</button>
 </form>
 
-<a href="/bands/$band.getId()/add_venues">Add a new venue</a>
-<a href="/bands/$band.getId()/edit">Edit this band</a>
-<a href="/">All bands</a>
+<a href="/venues/new">Add a new venue</a><br>
+<a href="/bands/$band.getId()/edit">Edit this band</a><br>
+<a href="/">All bands</a><br>
 
 <form action='/bands/$band.getId()/delete' method='post'>
   <button type="submit" class="btn-danger" id="delete">Delete</button>

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="BandTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2016-05-19T04:34:31" hostname="IanL.local" time="0.202">
+<testsuite name="BandTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2016-05-19T04:45:51" hostname="IanL.local" time="0.197">
   <properties/>
-  <testcase name="save_savesObjectIntoDatabase_true" classname="BandTest" time="0.017"/>
-  <testcase name="delete_deletesAllBandAndVenueAssociations" classname="BandTest" time="0.031"/>
-  <testcase name="all_emptyAtFirst_0" classname="BandTest" time="0.011"/>
-  <testcase name="getName_bandInstantiatesWithName_String" classname="BandTest" time="0.006"/>
-  <testcase name="find_findsBandInDatabase_true" classname="BandTest" time="0.015"/>
+  <testcase name="save_savesObjectIntoDatabase_true" classname="BandTest" time="0.016"/>
+  <testcase name="delete_deletesAllBandAndVenueAssociations" classname="BandTest" time="0.03"/>
+  <testcase name="all_emptyAtFirst_0" classname="BandTest" time="0.01"/>
+  <testcase name="getName_bandInstantiatesWithName_String" classname="BandTest" time="0.005"/>
+  <testcase name="find_findsBandInDatabase_true" classname="BandTest" time="0.016"/>
   <testcase name="save_assignsIdToObject_int" classname="BandTest" time="0.015"/>
-  <testcase name="equals_returnsTrueIfNamesAretheSame_true" classname="BandTest" time="0.006"/>
+  <testcase name="equals_returnsTrueIfNamesAretheSame_true" classname="BandTest" time="0.005"/>
   <testcase name="addVenue_addsVenueToBand" classname="BandTest" time="0.026"/>
-  <testcase name="delete_deletesBand_true" classname="BandTest" time="0.02"/>
-  <testcase name="update_updatesBandName_true" classname="BandTest" time="0.022"/>
+  <testcase name="delete_deletesBand_true" classname="BandTest" time="0.022"/>
+  <testcase name="update_updatesBandName_true" classname="BandTest" time="0.019"/>
   <testcase name="Band_instantiatesCorrectly_true" classname="BandTest" time="0.006"/>
-  <testcase name="getVenues_returnsAllVenues_List" classname="BandTest" time="0.026"/>
+  <testcase name="getVenues_returnsAllVenues_List" classname="BandTest" time="0.025"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
