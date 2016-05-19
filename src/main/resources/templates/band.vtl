@@ -6,7 +6,18 @@
   #end
 </ul>
 
-<a href="/stylists/$stylist.getId()/venues/new">Add a new venue</a>
+<form action='/bands/:id/add_venues' method='post'>
+  <input id="band_id" name="band_id" type="hidden" value="$band.getId()">
+  <label for="venue_id">Select a venue</label>
+  <select id='venue_id' name='venue_id' type='text'>
+    #foreach($venue in $allVenues)
+      <option value="$venue.getId()"> $venue.getName() </option>
+    #end
+  </select>
+  <button type="submit" class="btn btn-info">Add venue to this band</button>
+</form>
+
+<a href="/bands/$band.getId()/add_venues">Add a new venue</a>
 <a href="/bands/$band.getId()/edit">Edit this band</a>
 <a href="/">All bands</a>
 

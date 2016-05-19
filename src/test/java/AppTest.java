@@ -57,7 +57,6 @@ public class AppTest extends FluentTest {
     goTo(url);
     fillSelect("#venue_id").withText("Venue1");
     submit(".btn");
-    assertThat(pageSource()).contains("<li>");
     assertThat(pageSource()).contains("Venue1");
   }
 
