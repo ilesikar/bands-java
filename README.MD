@@ -23,7 +23,7 @@ This website code contains:
 2. Extract ZIP folder
 3. Install Git Bash, Gradle, PSQL
 4. Type into PSQL:
-```
+```sql
 CREATE DATABASE band_tracker;
 \c band_tracker;
 CREATE TABLE bands (id serial PRIMARY KEY, name varchar);

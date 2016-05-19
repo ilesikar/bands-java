@@ -5,5 +5,12 @@
   <a href="/bands/$band.getId()">$band.getName()</a><br>
 #end
 <br>
+
+<p>List of all venues:</p>
+#foreach($venue in $venues)
+  <a href="/venues/$venue.getId()">$venue.getName()</a><br>
+#end
+<br>
+
 <a href="/bands/new">Add A Band</a><br>
 <a href="/venues/new">Add A Venue</a>

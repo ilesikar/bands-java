@@ -1,0 +1,10 @@
+<h1>Bands that have played at $venue.getName():</h1>
+
+<ul>
+  #foreach($band in $venue.getBands())
+   <li>$band.getName()</li>
+  #end
+</ul>
+
+<a href="/venues/new">Add a new venue</a><br>
+<a href="/">All bands</a><br>

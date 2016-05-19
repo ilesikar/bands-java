@@ -12,8 +12,9 @@ public class App {
 
     get("/", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
-      model.put("template", "templates/index.vtl");
       model.put("bands", Band.all());
+      model.put("venues", Venue.all());
+      model.put("template", "templates/index.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
@@ -71,6 +72,15 @@ public class App {
       response.redirect("/bands/" + bandId);
       return null;
     });
+
+    get("/venues/:id", (request,response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      Venue venue = Venue.find(Integer.parseInt(request.params("id")));
+      model.put("venue", venue);
+      model.put("allVenues", Venue.all());
+      model.put("template", "templates/venue.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
 
     get("/bands/:id/edit", (request,response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
