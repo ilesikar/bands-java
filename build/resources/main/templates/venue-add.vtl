@@ -1,12 +1,12 @@
-<h1>Add a client for $venue.getName()</h1>
+<h1>Add a Venue</h1>
 
-<form action="/venues/new" method="post">
-  <input id="venueId" name="venueId" type="hidden" value="$venue.getId()">
-
-  <div class="form-group">
-    <label for="name">Venue:</label>
-    <input id="name" name="name" type="text">
-  </div>
-
-  <button type="submit" class="btn btn-success">Add Venue</button>
+<form action='/venues/new' method='post'>
+  <input id="band_id" name="band_id" type="hidden" value="$band.getId()">
+  <label for="venue_id">Select a venue</label>
+  <select id='venue_id' name='venue_id' type='text'>
+    #foreach($venue in $allTasks)
+      <option value="$venue.getId()"> $venue.getName() </option>
+    #end
+  </select>
+  <button type="submit" class="btn btn-info">Add venue to this band</button>
 </form>
